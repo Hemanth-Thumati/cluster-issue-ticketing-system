@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Ticket</title>
+</head>
+<body>
+  <h2>Create New Ticket</h2>
+  <form action="/tickets" method="POST">
+    <label>Cluster Name:</label>
+    <input type="text" name="cluster" required>
+    <br>
+    <label>Issue:</label>
+    <textarea name="issue" required></textarea>
+    <br>
+    <label>Priority:</label>
+    <select name="priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+    <br>
+    <button type="submit">Submit Ticket</button>
+  </form>
+</body>
+</html>

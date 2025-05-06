@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket List</title>
+</head>
+<body>
+  <h2>All Tickets</h2>
+  <div id="ticket-list">
+    <!-- You can dynamically insert tickets via JS -->
+  </div>
+  <script>
+    fetch('/tickets')
+      .then(res => res.json())
+      .then(tickets => {
+        const container = document.getElementById('ticket-list');
+        tickets.forEach(t => {
+          container.innerHTML += `
+            <div>
+              <h4>Cluster: ${t.cluster}</h4>
+              <p>${t.issue}</p>
+              <p>Priority: ${t.priority}</p>
+              <p>Status: ${t.status}</p>
+              <hr>
+            </div>
+          `;
+        });
+      });
+  </script>
+</body>
+</html>
